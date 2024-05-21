@@ -2,8 +2,6 @@ package mc.thearcade.commons.utils;
 
 import com.google.gson.*;
 import com.google.gson.stream.JsonWriter;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.FileReader;
@@ -33,7 +31,7 @@ public final class JsonUtils {
     }
 
 
-    public static <T> @Nullable T castJson(String json, Class<T> clazz) {
+    public static <T> T castJson(String json, Class<T> clazz) {
         try {
             return GSON.fromJson(json, clazz);
         }
@@ -42,7 +40,7 @@ public final class JsonUtils {
         }
     }
 
-    public static <T> @Nullable T castJson(String json, Type type) {
+    public static <T> T castJson(String json, Type type) {
         try {
             return GSON.fromJson(json, type);
         }
@@ -51,7 +49,7 @@ public final class JsonUtils {
         }
     }
 
-    public static <T> @NotNull T castJson(String json, Class<T> clazz, T def) {
+    public static <T> T castJson(String json, Class<T> clazz, T def) {
         try {
             return GSON.fromJson(json, clazz);
         }
@@ -60,7 +58,7 @@ public final class JsonUtils {
         }
     }
 
-    public static <T> @Nullable T castJson(File file, Class<T> clazz) {
+    public static <T> T castJson(File file, Class<T> clazz) {
         try {
             if (!file.exists()) return null;
             FileReader fr = new FileReader(file);
@@ -73,7 +71,7 @@ public final class JsonUtils {
         }
     }
 
-    public static <T> @NotNull T castJson(File file, Class<T> clazz, T def) {
+    public static <T> T castJson(File file, Class<T> clazz, T def) {
         try {
             if (!file.exists()) return def;
             FileReader fr = new FileReader(file);

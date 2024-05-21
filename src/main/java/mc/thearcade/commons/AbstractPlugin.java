@@ -8,7 +8,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitTask;
-import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -99,11 +98,11 @@ public abstract class AbstractPlugin extends JavaPlugin {
         }, this);
     }
 
-    protected void registerListener(@NotNull Listener listener) {
+    protected void registerListener(Listener listener) {
         Bukkit.getPluginManager().registerEvents(listener, this);
     }
 
-    protected void registerListeners(@NotNull Listener... listeners) {
+    protected void registerListeners(Listener... listeners) {
         for (Listener listener : listeners) {
             registerListener(listener);
         }

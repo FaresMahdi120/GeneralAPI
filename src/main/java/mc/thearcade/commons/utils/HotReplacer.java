@@ -1,8 +1,5 @@
 package mc.thearcade.commons.utils;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
 import java.util.HashMap;
 import java.util.function.Function;
 
@@ -18,11 +15,11 @@ public final class HotReplacer<T> {
         addReplacement(key, (t) -> replacement);
     }
 
-    public @Nullable Function<T, String> getReplacementOrNull(String key) {
+    public Function<T, String> getReplacementOrNull(String key) {
         return replacements.get(key);
     }
 
-    public @NotNull Function<T, String> getReplacement(String key) {
+    public Function<T, String> getReplacement(String key) {
         Function<T, String> replacement = getReplacementOrNull(key);
         if (replacement == null) {
             throw new IllegalArgumentException("No replacement found for key " + key);
@@ -30,7 +27,7 @@ public final class HotReplacer<T> {
         return replacement;
     }
 
-    public @NotNull String replace(@NotNull String input, @Nullable T context) {
+    public String replace(String input, T context) {
         if (context == null) {
             return input;
         }
