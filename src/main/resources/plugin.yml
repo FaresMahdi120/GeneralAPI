@@ -1,0 +1,3 @@
+name: GeneralAPI
+version: '${project.version}'
+main: me.dev.faresmahdi.generalapi.GeneralAPI
