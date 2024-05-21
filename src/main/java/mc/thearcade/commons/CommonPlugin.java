@@ -9,9 +9,12 @@ import org.bukkit.inventory.InventoryHolder;
 
 public abstract class CommonPlugin extends AbstractPlugin {
 
+    static CommonPlugin instance;
+
     @Override
     public void onEnable() {
         super.onEnable();
+        instance = this;
         this.getServer().getPluginManager().registerEvents(new Listener() {
             @EventHandler
             public void onInventoryClick(InventoryClickEvent event) {
@@ -30,5 +33,9 @@ public abstract class CommonPlugin extends AbstractPlugin {
                 }
             }
         }, this);
+    }
+
+    public static CommonPlugin getInstance() {
+        return instance;
     }
 }
