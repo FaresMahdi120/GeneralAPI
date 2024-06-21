@@ -1,0 +1,3 @@
+name: GeneralAPI
+version: '1.0-SNAPSHOT'
+main: mc.thearcade.commons.CommonPlugin
